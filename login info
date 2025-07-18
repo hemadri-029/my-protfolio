@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creative Colorful Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ff6a00 0%, #ee0979 50%, #00c3ff 100%);
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .login-container {
+            background: rgba(255,255,255,0.95);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            padding: 40px 32px;
+            width: 340px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: -60px; left: -60px;
+            width: 160px; height: 160px;
+            background: radial-gradient(circle, #ff6a00 60%, transparent 100%);
+            z-index: 0;
+            opacity: 0.3;
+        }
+        .login-container::after {
+            content: '';
+            position: absolute;
+            bottom: -60px; right: -60px;
+            width: 160px; height: 160px;
+            background: radial-gradient(circle, #00c3ff 60%, transparent 100%);
+            z-index: 0;
+            opacity: 0.3;
+        }
+        .login-title {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #ee0979, #ff6a00, #00c3ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 28px;
+            z-index: 1;
+        }
+        .login-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            z-index: 1;
+        }
+        .login-form input {
+            padding: 12px 16px;
+            border: none;
+            border-radius: 8px;
+            background: #f3f3f3;
+            font-size: 1rem;
+            transition: box-shadow 0.2s;
+            outline: none;
+        }
+        .login-form input:focus {
+            box-shadow: 0 0 0 2px #00c3ff;
+            background: #e0f7fa;
+        }
+        .login-btn {
+            padding: 12px 0;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #ee0979, #ff6a00, #00c3ff);
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+        .login-btn:hover {
+            background: linear-gradient(90deg, #00c3ff, #ff6a00, #ee0979);
+            transform: translateY(-2px) scale(1.03);
+        }
+        .login-links {
+            margin-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 0.95rem;
+            z-index: 1;
+        }
+        .login-links a {
+            color: #ee0979;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .login-links a:hover {
+            color: #00c3ff;
+        }
+        .hi-message {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #00c3ff, #ff6a00, #ee0979);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            z-index: 2;
+        }
+        .press-enter {
+            font-size: 1.1rem;
+            color: #555;
+            margin-top: 10px;
+            text-align: center;
+            z-index: 2;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="hi-message" id="hiMessage">Hi!</div>
+        <div class="press-enter" id="pressEnterMsg">Press <b>Enter</b> to continue</div>
+        <div id="formSection" style="display:none;">
+            <div class="login-title">Welcome Back!</div>
+            <form class="login-form" autocomplete="off">
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+                <button class="login-btn" type="submit">Login</button>
+            </form>
+            <div class="login-links">
+                <a href="#">Forgot Password?</a>
+                <a href="#">Sign Up</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Show "Hi!" and wait for Enter key to show the form
+        document.getElementById('formSection').style.display = 'none';
+        document.getElementById('hiMessage').style.display = 'block';
+        document.getElementById('pressEnterMsg').style.display = 'block';
+
+        function showForm() {
+            document.getElementById('hiMessage').style.display = 'none';
+            document.getElementById('pressEnterMsg').style.display = 'none';
+            document.getElementById('formSection').style.display = 'block';
+            document.removeEventListener('keydown', enterListener);
+        }
+
+        function enterListener(e) {
+            if (e.key === 'Enter') {
+                showForm();
+            }
+        }
+
+        document.addEventListener('keydown', enterListener);
+    </script>
+</body>
+</html>
