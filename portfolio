@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hemadri portfolio</title>
+    
+    
+</head>
+<body>
+   <header>
+    <h1 >Welcome to my portfolio </h1>
+    <button>about</button>
+    <button type ="skills">skills</button>
+    <button type ="projects">projects</button>
+    <button type ="contact">contact</button>
+    <br>
+    </header>
+    <main>
+        <div>
+        <h1>Hemadri</h1>
+        <img src="https://www.instagram.com/nox.hemadri/p/DDjPLlvyp8Z/"   width="150" height="150">
+       </div>
+       <br>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hi, I'm Hemadri,</p><p>a passionate web developer</p><p>a love for creating dynamic and responsive websites.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>Check out my projects on GitHub!</p>
+            <div>
+                <h1>
+                    Contact Me
+                </h1>
+                <p>feel free <em>to get in touch </em>twith me using the form below</p>
+            </div>
+            <form>
+                <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="username" >
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="message">Message:</label>
+                <input id="message" name="message" required>
+                <br>
+                <b>choose your gender :</b>
+                <input type="radio" id = "male" value="male">
+                <label for="male">male</label>
+                <input type="radio" id ="female" value ="female">
+                <label for="female">female</label>
+                <input type="radio" id = "other" value="other">
+                <label for="other">other</label>
+                <br>
+                <b>select your interest :</b>
+                <input type="checkbox" id="coding" value="coding">
+                <label for="coding">coding</label>
+                <input type="checkbox" id="reading" value="reading">
+                <label for="reading">reading</label>
+                <br>
+                <button type="submit">submit</button>
+            </form>
+            </div>
+            
+
+            
+            <footer>
+                <section id="social media">
+                <h2>social media</h2>
+                
+                <p>girivardhano29@gmail.com</p>
+
+
+            </footer>
+
+    
+</body>
+</html>
